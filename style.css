@@ -1,0 +1,122 @@
+footer {
+  background-color: #878BA8; /* slightly lighter than bg-dark */
+  color: rgb(0, 0, 0);
+  font-family: "Segoe UI", sans-serif;
+  box-shadow:0 5px 15px rgba(7, 6, 6, 0.5);
+}
+
+footer a {
+  color: #083337;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+footer a:hover {
+  color: #00aced;
+  text-decoration: underline;
+}
+
+.footer img.sponsor-logo {
+  height: 200px;
+  width: 200px;
+  max-width: 500px;
+  transition: 0.3s;
+}
+.footer img.sponsor-logo:hover {
+  height: 250px;
+  width: 250px;
+  transition: 0.3s;
+}
+.logo-section img {
+  max-width: 120px;
+  margin-bottom: 1rem;
+}
+
+.sponsor-logos {
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: end;
+}
+/* 
+ul.list-inline {
+  padding-left: 0;
+}
+
+ul.list-inline li {
+  margin: 0 10px;
+}
+
+.subfoot {
+  color: #ccc;
+}
+
+.subfoot:hover {
+  color: #fff;
+} */
+.container-fluid {
+  background-color: #edede9;
+  margin-left: 50px;
+  border-radius: 20px;
+  padding-top:5px;
+  padding-bottom: 5px;
+}
+.custom-home-btn {
+  transition: 0.3s;
+  width: 100px;
+}
+.custom-home-btn:hover {
+  background-color: #ffffff;
+  font-size: larger;
+  border-width: 1px;
+  border-color: black;
+  transition: 0.3s;
+}
+.dropdown-toggle {
+  transition: 0.3s;
+  width: 100px;
+}
+.dropdown-toggle:hover {
+  background-color: #ffffff;
+  font-size: larger;
+  border-width: 1px;
+  border-color: black;
+  transition: 0.3s;
+}
+.dropdown-item {
+  background-color: rgb(255, 255, 255);
+  transition: 0.3s;
+}
+.dropdown-item:hover {
+  background-color: rgb(255, 255, 255);
+}
+.custom-human-btn {
+  transition: 0.3s;
+}
+.custom-human-btn:hover {
+  transition: 0.3s;
+  border-width: 1px;
+  font-size: larger;
+  border-color: black;
+}
+.custom-human-btn {
+  transition: 0.3s;
+}
+.custom-human-btn:hover {
+  transition: 0.3s;
+  border-width: 1px;
+  font-size: larger;
+  border-color: black;
+}
+
+.navbar{
+ 
+  background-color: #edede9;
+  box-shadow:  0 5px 15px rgba(7, 6, 6, 0.5);
+  z-index: 1;
+  width:70%;
+  margin-bottom: 1%;
+  padding-bottom: 2%;
+  border-radius: 10px;
+ padding-right: 4%;
+ 
+}

@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education | IIT-Bombay - iGEM 2024</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .content-outer {
+            background-color: #d6ccc2;
+
+        }
+
+        .content-container {
+            background-color: white;
+            width: 80%;
+            border-radius: 20px;
+            padding-top:20px;
+            padding-left: 20px;
+            margin-left:150px;
+        }
+        #big-img:hover{
+            transform: scale(1.1);
+            transition: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+            <a class="tab-link pic" id="home-logo" href="/iit-bombay/">
+                <!-- <img src="https://static.igem.wiki/teams/5365/wiki-assets/nav/calcicapture.svg"></a> -->
+                <div class="container-fluid">
+                    <div class="menu-item">
+                        <a href="home.html" class="btn btn-outline-* custom-home-btn">Home</a>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-* dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="color:rgb(0, 0, 0);">
+                            Team
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Team.html">Team</a></li>
+                            <li><a class="dropdown-item" href="Attributes.html">Attributes</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-* dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="color: rgb(0, 0, 0);">
+                            Project
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Contributions.html">Contribution</a></li>
+                            <li><a class="dropdown-item" href="Description.html">Description</a></li>
+                            <li><a class="dropdown-item" href="Engineering.html">Engineering</a></li>
+                            <li><a class="dropdown-item" href="Notebook.html">Notebook</a></li>
+                            <li><a class="dropdown-item" href="Safety.html">Safety</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-item"><a href="human-practices.html"
+                            class="btn btn-outline-* custom-human-btn">Human practices</a>
+                    </div>
+                    <div class="menu-item"><a href="Education.html"
+                            class="btn btn-outline-* custom-human-btn">Education</a>
+                    </div>
+                    <div class="menu-item"><a href="Model.html" class="btn btn-outline-* custom-human-btn">Model</a>
+                    </div>
+                </div>
+    </div>
+    </nav>
+    </div>
+    <div class="contain">
+        <main style="display: flex; margin-bottom: 1rem;">
+            <div class="content-outer">
+                <h1 style="text-align: center;">Model</h1>
+                <div class="row d-flex justify-content-center content-container">
+                    <section id="header1">
+                        <h2>Calcification Modelling at Population Level</h2>
+                        <hr>
+                        <p>We wanted to look into how environmental factors impact the overall calcification in
+                            the oceanic ecosystem. More importantly, we wanted to get insights into the extent
+                            to which the population of Emilania Huxleyi and external nutrient conditions impact
+                            the net coccolith production. The population of E. huxleyi is impacted/regulated by
+                            a lot of factors including nutrient concentrations, other competing planktons, and
+                            various kinds of grazers. Apart from them sunlight (light intensity), temperature
+                            and oceanic sinking also plays a role in changing the amount of carbon dioxide
+                            sequestered.</p>
+                        <p>So we implemented an Eulerian seasonal phytoplankton model for the purpose of
+                            modeling the dynamics of growth of E. huxleyi based upon a few papers as mentioned
+                            in the references. The model is one-dimensional with a single layer, the surface
+                            mixed layer. Within this layer is a time-dependent ecosystem composed of five
+                            classes: E. huxleyi, Diatoms, Dinoflagellates, Phytoflagellates, Picophytoplankton
+                            and three classes of heterotrophs: Free Bacteria, Heteroflagellates, Micro
+                            Zooplanktons ( such as ciliates ). There are Five Nutrients: Silicates, Nitrate,
+                            Phosphate, Ammonium and Dissolved Organic Carbon. Apart from that Detritus Attached
+                            Coccoliths and Free Coccoliths have been modeled. The data for the annual variation
+                            of light irradiance is passed as input. Temperature is modeled as a sinusoidal
+                            function of time.</p><img
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/model/eq1-png.webp" alt=""
+                            style="width: 50%;">
+                        <p>A typical growth equation looks like this -</p>
+                        <p>dP/dt = [( max_growth_rate * (temperature limitation) * (light limitation) *
+                            (combined nutrient limitation)) - (Para1) * (grazer concentration) - (Mortality
+                            rate) - (Sinking Rate)]*P</p>
+                        <p>Para1 is a placeholder of a constant/parameter.<br>P - Population ( in mg Carbon /m3
+                            )<br>All limitation factors range from 0 to 1. <br>Grazer can be ciliates or hetero
+                            flagellates depending upon the organism under consideration.<br>Mortality Rate -
+                            Incorporates the external mortality rate due to mesograzers and it also incorporates
+                            the backflow of carbon due to respiration.</p>
+                        <p>The nutrient limitation and light limitation are modeled using the Michaelis–Menten
+                            equation.</p><img src="https://static.igem.wiki/teams/5365/wiki-assets/model/eq2-png.webp"
+                            alt="" style="width:40%;">
+                        <p>Here NH represents the half saturation constant for nitrates. AH represents the same
+                            for ammonia. PH similarly for phosphate.</p><img
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/model/eq3-png.webp" alt=""
+                            style="width:15%;">
+                        <p>IH represents the half saturation constant for light intensity.<br>Temperature
+                            limitation is modeled a bit differently</p><img
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/model/eq4-png.webp" alt=""
+                            style="width: 30%;">
+                        <p>A typical nutrient concentration (Nitrogen and Phosphate) equation looks like-</p>
+                        <p>dN/dt = - (Consumption by organisms) + (para2) * (N_baselayer - N)</p>
+                        <figure><img src="https://static.igem.wiki/teams/5365/wiki-assets/model/waterpic-png.webp"
+                                alt="" style="margin-left: 17%;">
+                            <figcaption><b>Figure 3.</b> Relative abundances of CAM, CA, and GPA transcripts in
+                                the haploid (A) and diploid (B) stages in E. huxleyi (strains RCC1216 and
+                                RCC1217) during the dark (black bar) and light (white bar) periods. Data are
+                                presented as means standard deviations for three independent cultures. The bars
+                                indicate significant differences between results for dark and light conditions
+                                (Student’s t-test; P 0.05). Note that the x axes start at 40%<br>Note: CAM
+                                refers to calmodulin (CAM1)</figcaption>
+                        </figure>
+                        <p>Consumption by organisms is modeled proportional to carbon intake rate with the
+                            coefficient based upon the typical ratio of the nutrient and carbon in the cells of
+                            the organism. The second term corresponds to inflow of nutrients from the deeper
+                            layer into the mixed layer, the ecosystem of which we are modeling.</p>
+                        <p>For example, Nitrogen equation </p><img
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/model/eq5-png.webp" alt=""
+                            style="width: 60%;">
+                        <p>There are several terms incorporating the consumption of nitrogen by different
+                            organisms. The last term represents the mixing from deeplayer. </p>
+                        <p>The coccolith production has been modeled in two different ways ( earlier is based on
+                            the paper while later is a modified version of it. The modified version of it is
+                            discussed later )</p>
+                        <p>Below is the equation for the attached coccoliths ( attached to the body of the cell
+                            )</p><img src="https://static.igem.wiki/teams/5365/wiki-assets/model/eq6-png.webp" alt=""
+                            style="width: 60%;">
+                        <p>The First term in the above equation represents the formation rate. Second term
+                            represents their destruction due to ciliate grazing. Third term represents
+                            destruction due to mortality. Fourth term represents the sinking of cells in the
+                            deeper layer which causes outer flow of attached coccoliths ( thus negative ). Last
+                            term accounts for conversion into detached coccoliths. In the first term, Cmax
+                            represents the maximum calcification rate followed by temperature and light
+                            limitation factors.</p>
+                        <p><b>Overall carbon capture can be calculated by - (first term) * (height of mixed
+                                layer) mg C/m2 </b></p>
+                        <p>This one is for the free coccoliths (These are the coccoliths which are detached from
+                            the body of the cell)</p><img
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/model/eq7-png.webp" alt=""
+                            style="width: 60%;">
+                        <h3 id="header1-subsection-0-0">Results</h3>
+                        <p>We feeded the data of light irradiance and set parameters to simulate the ecosystem
+                            at 47 degree North, NE Atlantic Ocean, one of the places where Emilania Huxleyi
+                            shows observable bloom. The overall population variation is in accordance with the
+                            timing of the blooms in actuality.</p>
+                        <h3 id="header1-subsection-0-1">Growth Results</h3>
+                        <p>These are the growth curves for various organisms we modeled. </p>
+                        <figure><img src="https://static.igem.wiki/teams/5365/wiki-assets/model/growcurve-png.webp"
+                                alt=""style="transform:scale(0.8);margin-left:10%;"></figure>
+                        <p>First we were curious to know what is stopping Emilania huxleyi from growing in the
+                            environment. Is it the competition or nutrient concentration or both ? Competition
+                            with other organisms for nutrients was obviously there. But since our final solution
+                            would be in a form of a bioreactor, the main focus of our study was nutrient
+                            condition optimization for maximum carbon sequestration. The major nutrients we
+                            looked at were nitrates and phosphates.</p>
+                        <p>Here are the growth results after increasing nitrate concentration at the starting of
+                            the season from ( 7 mmol/m3 to 10 mmol/m3 ). Notice that the Emilania Huxleyi has
+                            shown much significant increment in growth as compared to other organisms.</p>
+                        <figure><img src="https://static.igem.wiki/teams/5365/wiki-assets/model/growcurve2-png.webp"
+                                alt=""style="transform:scale(0.8);margin-left:10%;"></figure><br>
+                        <p>We also did the same experiment with phosphate by changing the initial concentration
+                            by the same factors. Have a look at the results</p>
+                        <figure><img src="https://static.igem.wiki/teams/5365/wiki-assets/model/growcurve3-png.webp"
+                                alt=""style="transform:scale(0.8);margin-left:10%;"></figure>
+                        <p>Emilania Huxleyi has shown reduction while some others have shown improvement. The
+                            reason is that Emilania Huxleyi as compared to other organisms is capable of using
+                            organic phosphate when inorganic phosphate is limiting. In such situations, other
+                            organisms are not able to grow while E. Huxleyi can. Increasing the phosphate
+                            concentration improves others growth rates. Due to more competition E. Huxleyi’s
+                            overall strength reduces. </p>
+                        <p>Nitrate is limiting for E. Huxleyi ( in NE Atlantic ) is also supported by a few
+                            papers as mentioned in the references. The model helped us get wonderful insights in
+                            this direction, in both qualitative and quantitative sense. </p>
+                        <h3 id="header1-subsection-0-2">Carbon Capture </h3>
+                        <p>We wanted to do analysis on carbon capturing ( annual variation and regulation etc. )
+                            and how it is getting impacted by external factors. But we found that the variation
+                            of free coccoliths as obtained by our model doesn’t look realistic which hindered
+                            this analysis. Have a look at the plot below. </p><img
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/model/growcurve4-png.webp" alt=""
+                            style="width: 60%; margin-left: 10%;">
+                        <p>The second peak of free coccoliths in terms of ratio is way too high as compared to
+                            the growth. In other words, the rate at which carbon is getting deposited in
+                            coccoliths is significantly more than the rate at which it is getting used in the
+                            growth. Clearly, we were not modeling the disposition of carbon in coccoliths
+                            correctly. As a note, the carbon distribution within the cells roughly happens in
+                            the same amount. But still, one can expect a higher rate of carbon disposition to
+                            coccoliths as compared to growth because this is net growth. However even that
+                            couldn’t explain why the ratio of rate has significantly increased in the second
+                            peak. </p>
+                        <p>The answer to this was incorporating the nutrient limitation. This is necessary as
+                            suggested by some previously published lab experiment results which showed the way
+                            calcification rate per cell gets impacted by the nutrient limitation. This is also
+                            consistent with the above stated claim ( which is backed with papers as mentioned in
+                            references ), as the carbon going in growth is regulated by nitrate and so does the
+                            carbon going in calcification ( basically the rate of accumulation of carbon in the
+                            cell is regulated by nitrate, this has been used in one of the previous growth
+                            models which you can find in references ). </p>
+                        <p>We modeled the nutrient limitation in the same way we did for Emilania Huxleyi. This
+                            was supported both by the data we got from the published lab experiments and also
+                            through other models.</p>
+                        <p>What we got after this is as below.</p><img
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/model/conccurve-png.webp" alt=""
+                            style="width: 60%; margin-left: 20%;">
+                        <p>The result can be explained by the fact that nitrate which was limiting for growth
+                            was not earlier limiting the coccolith production which it should ( as per lab
+                            experimental data ). After incorporating the nitrate limitation factor, the model
+                            was corrected. </p>
+                        <p>The cumulative carbon capture for normal nutrient situation is as follow</p><img
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/model/conccurve2-png.webp" alt=""
+                            style="width: 60%; margin-left: 20%;">
+                        <p>What if the nitrate is more ? ( 7 mmol/m3 to 10 mmol/m3 ) </p>
+                        <p>There is a significant increase in the net carbon consumption thanks to the powerful
+                            next bloom ( second peak of population ) </p><img
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/model/conccurve3-png.webp" alt=""
+                            style="width: 60%; margin-left: 20%;">
+                        <p>This also motivated us to look into see what is the effect on carbon consumption if
+                            we change the half saturation constant for nitrate we are using. Half saturation
+                            constant captures the concentration of nitrate at which the growth rate becomes
+                            half. Making it lesser means that our organism is better at facing nitrate
+                            limitation and making it bigger means the organism is worse at it. ( These are the
+                            semantics of half saturation constants in general. They sort of captures the
+                            strength of the organism to handle the limitation ) </p>
+                        <p>The net carbon capture vs the half saturation constant is as follow </p><img
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/model/table-png.webp" alt=""
+                            style="width: 80%;">
+                        <p>Results of gradient of half saturation constant with respect to net carbon capture
+                            were motivating because it was significant in itself as well in comparison to other
+                            gradients ( for those of phosphate ). Thus making our organism better at handling
+                            nitrate limitation will give more boost than perhaps making it better at handling
+                            phosphate or other nutrient limitation. The whole model thus finally provided our
+                            wet lab research with a new direction. Nevertheless, the model can be used as a
+                            template for many other things. Any new organism is very easy to add. It can be
+                            tuned for any latitude ( just feed the data of irradiance vs time and temperature vs
+                            time ).</p>
+                    </section>
+                    <section id="header2">
+                        <h2>Calcification Modelling at a Cellular Level</h2>
+                        <hr>
+                        <h3 id="header2-subsection-1-0">Introduction</h3>
+                        <p>Calcification in E. Huxleyi leads to the formation of coccoliths containing calcite
+                            crystals which settle at the bottom of the ocean. Unlike other organic compounds
+                            containing carbon which get decomposed and released back to the carbon cycle,
+                            deposition of calcite on ocean beds removes it from the carbon cycle and thus plays
+                            a significant role as carbons sink. To enhance this process, it is crucial to
+                            understand the calcification process within E. Huxleyi and then model the process to
+                            understand impacting factors followed by tuning the factors for maximizing
+                            calcification.</p>
+                        <h3 id="header2-subsection-1-1">Calcification pathway in E. Huxleyi</h3>
+                        <p>The whole calcification pathway can be majorly divided into 3 steps –
+                        <ol>
+                            <li>Uptake of calcium and bicarbonate ions from the surrounding environment using
+                                channels on the cell membrane and after uptake, free calcium ions being
+                                cytotoxic are buffered by cytoplasmic protein calmodulin. Calmodulin, an EF-hand
+                                family protein, has a pair of EF-hands with each calmodulin buffering 4 calcium
+                                ions at maximal saturation</li>
+                            <li>The actual formation of calcite crystals takes place inside a coccolith vesicle,
+                                a specific feature of the coccolithophore family of alga. Inside the vesicle,
+                                calcium ions and bicarbonate ions interact to precipitate calcium carbonate, and
+                                H+ ions are buffered by the alkaline medium driving the reaction by the Le
+                                Chatelier principle. The deposition takes place on an acidic polysaccharides
+                                plate forming calcite crystals</li>
+                            <li>These crystals are then carried by some other acidic polysaccharides to the
+                                deposition site on the cell wall. The deposition takes place on nucleation sites
+                                on the GPA layer which is acidic protein mainly – glutamic acid, proline and
+                                alanine.</li>
+                        </ol>
+                        </p>
+                        <p>The uptake, formation and deposition are tightly linked so that the process gets
+                            carried smoothly. Before modeling, a detailed literature review was conducted on
+                            existing literature to understand the process of calcification and dependencies on
+                            various factors. E. huxleyi though a model organism among coccolithophores is
+                            relatively unexplored and thus its calcification pathway relatively understudied.
+                            Our study and modeling helped us in furthering our knowledge regarding the process.
+                        </p>
+                        <h3 id="header2-subsection-1-2">Initial phase and initial roadblocks</h3>
+                        <p>Due to relatively insufficient data, proceeding with modeling which is robust enough
+                            to provide conclusive results was difficult. We started looking up for other
+                            organisms/ processes undergoing calcification and if there existed models to capture
+                            the process to get ideas going ahead with our modeling. We found an interesting
+                            paper modeling calcification in bone mineralization.</p>
+                        <div class="mineralisation"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/model/min1-png.webp" alt=""><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/model/min2-png.webp" alt="">
+                        </div>
+                        <p>It was based on differential equations including immature collagen, mature collagen,
+                            nucleators (within mature collagen over which calcite deposition takes place),
+                            inhibitors (which reduce rate of deposition) and calcification process (which is
+                            actual rate of deposition). The immature collagen (over which deposition cannot take
+                            place) converts to a mature form of collagen by first order differential equation.
+                            The mature form of collagen has nucleator sites over which deposition takes place.
+                            These differential equations ensure that during initial phases while collagen is in
+                            immature form calcite deposition is low and inhibitor levels are high, as mature
+                            collagen forms and inhibitor levels taper, calcification increases drastically.
+                            Eventually, nucleator sites also reduce the increase in rate of deposition tapers.
+                            Due to this a typical sigmoid-like curve is obtained where rate of growth is slow
+                            initially, then increases a lot and then again reduces which is how bone
+                            mineralization process takes place spanning 100 days length.</p>
+                        <p>In our case of E huxleyi deposition on GPA protein is not much different. GPA is an
+                            acidic protein just like collagen over which nucleation takes place on nucleator
+                            sites. Inhibitors can be considered analogous to the feedback process. Unlike
+                            immature and mature collagen, GPA is formed in depositional form itself and
+                            corresponding changes were made to differential equations. In our case too at the
+                            initial 25-30 hours of its 72 hours lifespan, resources are diverted mainly towards
+                            growth and calcium deposition rates are low (this trend is followed even at
+                            populational level) indicating both structural and functional similarity with bone
+                            mineralization process.</p><img
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/model/modcode-png.webp" alt=""
+                            style="width: 80%;"><img
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/model/modgraph-jpeg.webp" alt=""
+                            style="width: 80%;">
+                        <h3 id="header2-subsection-1-3">Moving Ahead</h3>
+                        <p>Modeling a single part of the calcification pathway in isolation wasn’t helpful in
+                            terms of understanding how it is contributing to the whole process in general. Thus,
+                            modeling all the parts and then connecting all of them as a single end-to-end model
+                            was crucial at this point of time. Understanding the coccolith vesicle (CV) which
+                            maintained the ambient micro-environment for calcite precipitation was imperative.
+                            Coccolith vesicles are of 2 types with pH maintained in them in bimodal distribution
+                            – one type having between 6.8 to 7.2 pH and other one between 7.8 to 8.2 pH.
+                            Calmodulin unloads its calcium into CV which also uptakes bicarbonate ions and pumps
+                            protons actively out of CV into cytoplasm to maintain alkaline conditions. All this
+                            pushes the reaction towards formation of calcium carbonate which deposits on acidic
+                            polysaccharide plate inside CV on which this precipitation finally forms calcite
+                            crystals.</p><img src="https://static.igem.wiki/teams/5365/wiki-assets/model/reac-png.webp"
+                            alt="" style="width: 50%;">
+                        <p>Now according to existing literature, the amount of proteins expressed inside the CV
+                            remains the same irrespective of the amount of calcification. When external calcium
+                            was reduced to the threshold such that calcification stops, still then CV proteins
+                            are expressed to the same extent indicating that CV protein doesn’t act as rate
+                            limiting. Rather when external calcium drops, the CV pH is modulated to control the
+                            rate of formation of calcite. Acidification of CV is the modality used by E. Huxleyi
+                            to stop calcification when external calcium concentration reduces below a threshold.
+                            So, the concentration gradient generated because of external calcium concentration
+                            and cytoplasmic calcium concentration not only regulates rate of uptake of calcium
+                            but also determines the CV pH thereby inhibiting the deposition. In order to capture
+                            the idea of CV pH impacting deposition, inhibitor differential equation inculcates
+                            dependence with CV pH with low pH leading to lower rate of inhibitor decline thus
+                            maintaining higher level of inhibitors for longer times if pH is relatively less
+                            alkaline. The CV pH is shown to be on log scale of (external/internal calcium
+                            concentration) since pH itself represents log scale with respect to proton ions. pH
+                            is adjusted to be in the range of 7 to 8 with respect to external calcium
+                            concentration of 0.1 to 10 mM (provided internal calcium concentration is 1e-4 mM
+                            maintained by homeostasis to prevent cytotoxicity associated with free calcium
+                            ions).</p>
+                        <p>The CV pH is the only factor taken into consideration of the CV in the process since
+                            expression and activity of CV otherwise is not limiting and also not dependent on
+                            other external factors.</p><img id="big-img"
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/model/calcurve-png.webp" alt=""
+                            style="width: 80%; height: 8%;margin-left: 8%;transition: 0.5s;">
+                        <p>Uptake by calcium channels is dependent on concentration gradient. 10 mM external
+                            calcium ions are present in sea water the natural habitat of E. Huxleyi while 0.1 mM
+                            is the concentration at which calcification stops. Apart from that, calmodulin which
+                            acts as buffering cytoplasmic calcium transporter, also acts as activator for the
+                            calcium channels on the cell membrane. Higher amount of free calmodulin leads to
+                            higher activation of cell membrane channels leading to higher uptake. After it gets
+                            bound to calcium ions, it undergoes conformational change thereby no longer
+                            activating channels. This ensures the feedback maintaining the calcium required for
+                            calmodulin equilibrium.</p>
+                        <p>Because of the equilibrium constant, the bound calmodulin amount is much higher than
+                            free calmodulin. So, the amount of uptake is taken to be dependent on the ratio of
+                            external to internal calcium concentration logarithmically (similar to pH) and
+                            amount of free calmodulin exponentially (since allosteric activation relates to
+                            reduced activation energy). Some amount is used for cellular functions and rest all
+                            goes to calcification. This uptake is based on assumption of homeostatic conditions.
+                            This correlates with experimental data of 30 to 40 coccoliths being formed at 10 mM
+                            external calcium concentration at normally expressed calmodulin amounts.</p>
+                        <p>Since free calcium ions are cytotoxic, internal calcium ion concentration is kept
+                            unchanged. All other parameters like coccolith weight, percentage of calcite in
+                            coccolith are taken from experimental data. Since total calmodulin is of order 1e-5
+                            , due to equilibrium favoring the bound state to a large extent, the amount of bound
+                            state is taken 1e-5 and using the equation of equilibrium constant we get the free
+                            state amount to be 1e-7 order. Changing bound state by any factor correlates to
+                            similar factor change in free state as well.</p>
+                        <h3 id="header2-subsection-1-4">Actual model integration</h3>
+                        <p>Now all the three parts are combined into a single end-to-end model. We already saw
+                            how intricately they are connected. Let the calcium uptake part allocated for
+                            calcification be x and the maximal amount which can be deposited by y. In case of
+                            x&gt;y, y amount is deposited and x-y is pushed to storage while when y&gt;x, x
+                            amount is deposited and uptake acts as limiting in such cases. Here the storage just
+                            acts as a placeholder. In actual scenario, there is negative feedback to uptake
+                            reducing the uptake in next time stamp but in this case, we are anyway not allowing
+                            extra calcium which cannot be deposited to contribute towards our total
+                            calcification. Thus, basically we are taking min (x, y) as our contribution towards
+                            calcification</p>
+                        <p>Why uptake is limiting than deposition capacity</p><img
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/model/modcode2-png.webp" alt=""
+                            style="width: 60%;margin-left: 10%;">
+                        <div class="depcurves"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/model/dep1-png.webp" alt=""
+                                style="width: 50%;"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/model/dep2-png.webp" alt=""
+                                style="width: 50%;"></div>
+                        <div class="depcurves"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/model/dep3-png.webp" alt=""
+                                style="width: 50%;"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/model/dep4-png.webp" alt=""
+                                style="width: 50%;"></div>
+                        <p>As can be seen by above graphs only in initial hours, deposition is limited (that too
+                            only marginally) and that happens because the cell is yet not ready to divert
+                            resources towards calcification and uptake is based on assumption of homeostasis.
+                            Later on, for the majority of time intervals, uptake is limited. It can be easily
+                            seen from the graphs that increasing uptake will improve rate of calcification and
+                            cytotoxicity of free calcium ions will force the cell to accelerate its coccolith
+                            production. Deposition capability doesn’t act as RDS in this pathway.</p>
+                        <p>Why calmodulin over simply increasing external calcium concentration</p><img
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/model/lastcurves-png.webp" alt=""
+                            style="width: 100%;transform: scale(0.8);"><img
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/model/perch-png.webp" alt=""
+                            style="width: 80%; margin-left: 10%;transform: scale(0.8);">
+                        <p>Increasing external calcium concentration by 10 % over 10 mM of normal external
+                            medium leads to 2.12 % increase in total calcification over the lifespan whereas 10%
+                            increase in calmodulin expression leads to 10.79% increase in total calcification.
+                            Also, though external calcium concentration increment is easier than increased
+                            expression of calmodulin, it would stop having effect in actual practice beyond a
+                            limit due to saturation of channels and negative feedback. Thus, enhanced calmodulin
+                            expression leading to enhanced calcium uptake can be considered as a way for
+                            improving calcification rate drastically.</p>
+                    </section>
+                    <section id="header3">
+                        <h2>SRA Gene Expression Study</h2>
+                        <h3 id="header3-subsection-2-0">Abstract</h3>
+                        <p><i>Emiliania huxleyi</i> (E. huxleyi) is a cosmopolitan coccolithophore (self-feeding
+                            single-celled phytoplankton) that plays a crucial role in the global carbon cycle.
+                            It performs photosynthetic carbon fixation and calcification to synthesize its
+                            calcified scales. Understanding the genetic mechanisms behind carbon fixation and
+                            calcification, which can serve as an understanding of the internal calcification
+                            process of E huxleyi, is challenging due to a lack of quantitative data. The
+                            biochemical steps and metabolic mechanisms underlying calcification remain poorly
+                            defined, limiting our ability to characterize this critical process fully. Here, we
+                            leveraged publicly available transcriptomics (RNA-seq) data to decipher a likely
+                            calcification pathway and the underlying mechanisms of its regulation. More
+                            importantly, we also develop an analytical framework and tool called genecorder,
+                            that enables rapid analysis of public RNA-seq datasets and identification of genes
+                            associated with a particular phenotype.</p>
+                        <h3 id="header3-subsection-2-1">Background</h3>
+                        <p>E. huxleyi is a haptophyte (Figure 1) that produces delicate calcium carbonate scales
+                            called cocoliths by fixing the carbon dioxide from their environment. The E. huxleyi
+                            genome was first constructed and studied in a landmark paper that provided a
+                            foundational resource for further transcriptomic and genomic studies aimed at
+                            understanding its gene functions. The genome, sequenced from strain CCMP1516, was
+                            complemented by sequences from 13 additional isolates, revealing a pan-genome
+                            structure, with core genes shared among strains and others variably distributed.
+                            This work has paved the way for deeper insights into how calcification-related genes
+                            may be regulated across different strains of E. huxleyi (<a
+                                href="https://pubmed.ncbi.nlm.nih.gov/23760476/">Read et al., 2013</a>). The
+                            reference genome and associated files were first made publicly available on the JGI
+                            Phycocosm database (<a
+                                href="https://genome.jgi.doe.gov/portal/Emihu1/Emihu1.download.html">Download -
+                                Emiliania huxleyi CCMP1516 v1.0 (doe.gov)</a>). Building upon this reference,
+                            Ensembl has made available an updated genome and transcript annotation file (<a
+                                href="https://protists.ensembl.org/Emiliania_huxleyi/Info/Annotation/#assembly">Details
+                                - Emiliania_huxleyi - Ensembl Genomes 59</a>). The current assembly (v1.0) of E.
+                            huxelyi consists of a total of 7795 scaffolds and 38, 788 unique genes.</p>
+                        <figure style="width: 100%;"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/model/cladogram-png.webp" alt=""
+                                style="width: 45%;margin-left: 20%;">
+                            <figcaption><b>Figure 1.</b> Cladogram showing the distinct branch occupied by the
+                                haptophyte lineage based on RAxML analysis of concatenated, nuclear-encoded
+                                proteins after addition of homologs from CCMP1516 and a
+                                pico-prymnesiophyte-targeted metagenome. Lineages with algal taxa are indicated
+                                (symbol). Filled circles represent nodes with ≥70% bootstrap support. The tree
+                                is rooted for display purposes only. Image taken as is from <a
+                                    href="https://www.nature.com/articles/nature12221">Read et al. 2013</a>
+                            </figcaption>
+                        </figure>
+                        <p>While CCMP1516 and CCMP371 are ‘calcifying strains’ of E. huxleyi, other strains such
+                            as CCMP2090 have lost the ability to calcify (<a
+                                href="http://dx.doi.org/10.1093/pcp/pcs066">http://dx.doi.org/10.1093/pcp/pcs066</a>).
+                            Nam et al. (<a
+                                href="https://www.e-algae.org/journal/view.php?doi=10.4490/algae.2018.33.4.21">https://www.e-algae.org/journal/view.php?doi=10.4490/algae.2018.33.4.21</a>)
+                            performed a transcriptomic study to compare a calcifying strain, CCMP371 with a
+                            non-calcifying strain, CCMP2090. Nam et al. identified several genes associated with
+                            coccolith (calcium scales of algae) production that were differentially expressed
+                            across the strains. By modulating the calcium concentration in growth media, Nam et
+                            al. further characterized that a minimum concentration of 10mM calcium is required
+                            for E. huxleyi to sustain its calcifying abilities and identified genes whole
+                            expression pattern varied as a function of calcium concentration. For example, eIF4A
+                            (ID 312754), profilin (ID 364205), ATP-binding cassette transporter (ID 231423) were
+                            the few top differentially expressed as a function of calcium concentration (Figure
+                            2). Most of the top differentially expressed genes are either membrane-bound or
+                            transporter genes thereby making them difficult to study experimentally as they
+                            usually lack flexibility and stability.</p>
+                        <figure style="width: 100%;"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/model/histos-png.webp" alt=""
+                                style="width: 65%;margin-left: 20%;">
+                            <figcaption><b>Figure 2.</b> Relative gene expression pattern of (A) Hypothetical
+                                protein (B) eIF4A (C) Profilin (D) ATP-binding cassette (ABC) transporter (E)
+                                Putative carbonic anhydrase (F) rbcL. Image taken as is from <a
+                                    href="https://www.e-algae.org/journal/view.php?doi=10.4490/algae.2018.33.4.21">Nam
+                                    et al. 2018</a></figcaption>
+                        </figure>
+                        <p>Nam et al. used CCMP1516 which is a calcifying strain of E. huxleyi for their study.
+                            While their study characterised which genes are associated with eliciting fixation
+                            response at different calcium concentration. Their study characterized genes
+                            associated with the calcium synthesis pathway in the calcifying strain. However some
+                            strains, such as CCMP2090, are non-calcifying thereby providing an opportunity to
+                            characterize genes that are causal for calcification. Viral infections have been
+                            shown to have a slower effect on calcifying strains like CCMP1516 compared to
+                            non-calcifying strains, further emphasizing the unique biological properties of
+                            calcification (<a
+                                href="https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2020.530757/full">Hanusot
+                                et al. 2020</a>).</p>
+                        <p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2681642/pdf/2737-08.pdf">Richier
+                                et al., 2009</a>, examined the expression of genes of biogeochemical interest in
+                            calcifying (diploid) and noncalcifying (haploid) strains of E.huxleyi. One of the
+                            genes that Richier et al. identified as differentially expressed is calmodulin
+                            (CAM), which shows a huge contrast in expression between diploid and haploid stages
+                            as compared to other proteins. CAM plays a crucial role in regulating calcium
+                            uptake, transport, and secretion. Given the infeasibility of experimentally
+                            examining every upregulated gene, we want to filter our genes of interest by
+                            excluding those encoding membrane-bound proteins, as they pose challenges in
+                            experimental validation. </p>
+                        <p>Given CAM is a cytosolic protein, we hypothesized it to be the most appropriate
+                            target gene whose gene expression could be modulated in E. huxleyi to enhance carbon
+                            dioxide fixation, i.e. enhance calfiication. Unlike membrane-bound proteins, which
+                            are difficult to study experimentally, CAM's structural flexibility and soluble
+                            nature make it more amenable to biochemical and molecular research. By focusing on
+                            E. huxleyi CAM, we aim to investigate its specific role in calcification, whether it
+                            is involved directly or modulated by other factors in the calcium homeostasis
+                            pathway.</p>
+                        <figure style="width: 100%;"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/model/histos2-png.webp" alt=""
+                                style="width: 45%;">
+                            <figcaption><b>Figure 3.</b> Relative abundances of CAM, CA, and GPA transcripts in
+                                the haploid (A) and diploid (B) stages in E. huxleyi (strains RCC1216 and
+                                RCC1217) during the dark (black bar) and light (white bar) periods. Data are
+                                presented as means standard deviations for three independent cultures. The bars
+                                indicate significant differences between results for dark and light conditions
+                                (Student’s t-test; P 0.05). Note that the x axes start at 40%<br>Note: CAM
+                                refers to calmodulin (CAM1)</figcaption>
+                        </figure>
+                        <p>Next, we performed a thorough characterization of the sequence and structural
+                            properties of CAM1 in E huxelyi. First, we performed a BLAST analysis of E. huxel,
+                            <b>we discovered a 90% sequence similarity between E. huxleyi CAM and human CAM</b>.
+                            Human CAM is extensively studied for its involvement in various cellular processes,
+                            including cell differentiation, polarization, and nucleation. <b>E. huxleyi CAM1
+                                sequence has 150 amino acids</b>. While the structural properties of Human CAM1
+                            are very well characterized, we used AlphaFoldv3( <a
+                                href="https://www.nature.com/articles/d41586-024-01385-x">https://www.nature.com/articles/d41586-024-01385-x</a>)
+                            to predict the structure of CAM1 in E.huxelyi (Figure 4). Similar to the human
+                            ortholog, CAM1 in E. huxelyi has two approximately symmetrical globular domains
+                            (corresponding to the N- and C- domains) which are separated by a flexible linker
+                            region where Ca2+ binds.
+                        </p>
+                        <figure style="width: 100%;"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/model/alphafold-png.webp" alt=""
+                                style="width: 45%;">
+                            <figcaption><b>Figure 4.</b> The secondary structure of CAM1 folded using AlphaFold
+                            </figcaption>
+                        </figure>
+                        <p>Given that calcification is a complex process involving multiple pathways and genes,
+                            it’s important to differentiate between CAM’s role in general calcium homeostasis
+                            and its specific involvement in calcification. In the sections that follow, we tease
+                            apart the actual role of CAM (CAM1) using public single-cell RNA-sequencing
+                            datasets.</p>
+                        <h3 id="header3-subsection-2-2">Results</h3>
+                        <p><strong>Putative function CAM through gene ontology search</strong><br>As an
+                            evolutionarily conserved protein, CAM may participate in various functions across
+                            different pathways. Any synthetic modification to CAM could potentially impact these
+                            other pathways, making it essential to identify them. We search for gene ontology
+                            (GO) annotations of CAM to determine the additional pathways in which CAM is
+                            involved in Emiliania huxleyi. We found CAM1 to be part of multiple pathways one of
+                            which is specific to calcium signaling (Table 1). This reemphasizes the importance
+                            of CAM1 in calcium fixation but we wanted to test whether CAM1’s presence or absence
+                            at the molecular level is associated with calcium fixation (or lack thereof)
+                            phenotype. List of GO terms that CAM1 is associated with is summarized in Table 1.
+                        </p>
+                        <figure>
+                            <div style="width: 100%; height: 1000px; max-height: 100vh;"><embed
+                                    src="https://static.igem.wiki/teams/5365/wiki-assets/model/table1.pdf" width="100%"
+                                    height="100%" type="application/pdf"></div>
+                            <figcaption>Table 1. Gene ontology ID and terms associated with CAM1 in E Huxelyi.
+                                Gene lists were obtained from <a
+                                    href="https://github.com/jokergoo/BioMartGOGeneSets">https://github.com/jokergoo/BioMartGOGeneSets
+                                </a></figcaption>
+                        </figure>
+                        <p>However, a mere association of CAM1 with calcium signalling pathway is not sufficient
+                            to deduce whether CAM1 is essential for the fixation of carbon dioxide or the
+                            underlying mechanism. </p>
+                        <p><strong>CAM1 is associated with a differential response to Calcium ion
+                                concentration</strong></p>
+                        <figure><img src="https://static.igem.wiki/teams/5365/wiki-assets/model/pca-png.webp" alt=""
+                                style="width: 80%;">
+                            <figcaption><b>Figure 5.</b> Principal Component Analysis (PCA) of RNA-seq Data from
+                                Emiliania huxleyi under Different Calcium Concentrations.</figcaption>
+                        </figure>
+                        <p>In order to verify if CAM1 has a role in modulating the carbon dioxide and calcium
+                            ion coencetration, we re-analyzed RNA-sequencing dataset SRP182772. </p>
+                        <p>The left PCA plot represents RNA-seq samples from Emiliania huxleyi cultured in
+                            varying calcium concentrations: 0 mM (red), 0.1 mM (blue), 1 mM (green), and 10 mM
+                            (purple). The first principal component (PC1), accounting for 35% of the variance,
+                            is plotted on the x-axis, while the second principal component (PC2), accounting for
+                            13% of the variance, is on the y-axis. The plot indicates how calcium concentrations
+                            influence the transcriptional responses of the cells. Samples exposed to different
+                            calcium conditions show clear separation along the principal components, suggesting
+                            significant transcriptomic changes dependent on calcium availability.</p>
+                        <p>The right PCA plot depicts the same RNA-seq samples colored by biological replicate
+                            (1, 2, and 3). The replicates are relatively well-clustered within the calcium
+                            conditions, indicating consistent and reproducible transcriptomic responses across
+                            the experiments.</p>
+                        <figure><img src="https://static.igem.wiki/teams/5365/wiki-assets/model/cam-png.webp" alt=""
+                                style="width: 60%;">
+                            <figcaption><b>Figure 6.</b> Expression Levels of CAM1 Gene in Emiliania huxleyi
+                                under Different Calcium Conditions</figcaption>
+                        </figure>
+                        <p>This box plot represents the distribution of expression levels of the CAM1 gene
+                            across four calcium concentrations: 0 mM, 0.1 mM, 1 mM, and 10 mM. The y-axis shows
+                            the gene expression values in arbitrary units, ranging from approximately 3000 to
+                            10000. Each box represents the interquartile range (IQR), with the horizontal black
+                            line inside the box indicating the median expression level. The whiskers extend to
+                            the minimum and maximum values, and individual points represent potential outliers
+                            within the data. The plot illustrates that the CAM1 expression varies across the
+                            calcium treatments, with slightly higher expression observed at 10 mM calcium,
+                            suggesting a potential calcium-dependent regulation of CAM1.</p>
+                        <p><strong>Differential Expression of CAM1 Gene between Emiliania huxleyi Strains
+                                CCMP1516 and CCMP2090.</strong></p>
+                        <p>Here we aimed to find out how CAM is expressed in calcifying v/s non-calcifying
+                            strains of E. Huxleyi.</p>
+                        <figure><img src="https://static.igem.wiki/teams/5365/wiki-assets/model/pc-png.webp" alt=""
+                                style="width: 60%;">
+                            <figcaption><b>Figure 7.</b> Principal Component Analysis (PCA) of RNA-seq Data from
+                                Emiliania huxleyi Strains CCMP1516 and CCMP2090.</figcaption>
+                        </figure>
+                        <p>This PCA plot illustrates the clustering of RNA-seq samples from two distinct strains
+                            of Emiliania huxleyi, CCMP1516 (red) and CCMP2090 (blue). The first principal
+                            component (PC1), which accounts for 97% of the total variance, is plotted along the
+                            x-axis, while the second principal component (PC2), representing 1% of the variance,
+                            is displayed along the y-axis. The clear separation along PC1 highlights the
+                            substantial transcriptional differences between the two strains. CCMP1516 is
+                            associated with carbon-fixing capabilities, while CCMP2090 shows a different
+                            transcriptional profile, evident from its distinct clustering. This visualization
+                            emphasizes the significant biological and functional divergence between the two
+                            strains at the transcriptomic level.</p>
+                        <figure><img src="https://static.igem.wiki/teams/5365/wiki-assets/model/strain-png.webp" alt=""
+                                style="width: 80%;transform: scale(0.7);">
+                            <figcaption><b>Figure 8.</b> Comparison of normalized gene expression of CAM1 across
+                                CCMP1516 (calcifying) and CCMP2090 (non-calcifying) strains.</figcaption>
+                        </figure>
+                        <p>This box plot compares the expression levels of the CAM1 gene between two distinct
+                            strains of Emiliania huxleyi, CCMP1516 (red) and CCMP2090 (blue). The y-axis shows
+                            the gene expression levels in arbitrary units, ranging from 20000 to 35000. The
+                            interquartile range (IQR) is represented by the height of each box, with the
+                            horizontal line inside each box denoting the median expression value. Whiskers
+                            extend to show the range of non-outlier data, while individual points indicate
+                            potential outliers. The plot reveals that CAM1 expression is consistently higher in
+                            CCMP1516 compared to CCMP2090, suggesting a strain-specific transcriptional
+                            difference that may be functionally significant. This difference could reflect the
+                            unique physiological roles of the strains, with CCMP1516 potentially having a more
+                            active CAM1-related pathway, possibly linked to its carbon-fixing capacity.</p>
+                        <p><strong>Deciphering the gene regulatory network of CAM1</strong></p>
+                        <p>We hypothesized that the lack of CAM1 expression in the non-calcifying strain
+                            CCMP2090 could be explained by the difference in the gene regulatory network
+                            associated with CAM1. Since currently there are no ChIP-seq or ATAC-seq datasets
+                            available for either of these strains, we used a simple correlation-based approach
+                            to identify which transcription factors are associated with CAM1.</p>
+                        <p>We identified a set of transcription factors (Figure 4) that have a high correlation
+                            with CAM1 in CCMP1516 but a low correlation in the CCMP2090 sample. While we could
+                            not perform an in-vivo or in-vitro validation of these transcription factors, this
+                            list can be used by future studies to characterize the each molecular mechanism
+                            behind CAM1’s regulation in E.huxleyi.</p>
+                        <figure><img src="https://static.igem.wiki/teams/5365/wiki-assets/model/heatmap-png.webp" alt=""
+                                style="width: 80%;">
+                            <figcaption><b>Figure 9.</b> Heatmap of Top 10 Correlated Transcription Factors with
+                                CAM1 in <i>Emiliania huxleyi</i> Strain CCMP1516.</figcaption>
+                        </figure>
+                        <p>This heatmap visualizes the Pearson correlation coefficients between CAM1 expression
+                            and the top 10 transcription factors in Emiliania huxleyi strain CCMP1516 (red) and
+                            strain CCMP2090 (blue). The color gradient represents the strength of correlation,
+                            ranging from 0 (blue) indicating no correlation to 0.8 (red) indicating a strong
+                            positive correlation. Each transcription factor is labeled by its corresponding
+                            EMIHUDRAFT gene identifier (referenced by Ensembl). The hierarchical clustering on
+                            the left groups the transcription factors based on their correlation patterns across
+                            the two strains. Notably, several transcription factors, including EMIHUDRAFT_462815
+                            and EMIHUDRAFT_62211, exhibit a high correlation with CAM1, particularly in
+                            CCMP1516, which may suggest their involvement in CAM1-associated regulatory
+                            pathways. The differences in correlation patterns between CCMP1516 and CCMP2090
+                            highlight the strain-specific transcriptional regulation of CAM1 and its related
+                            genes.</p>
+                        <p><strong>Differentiating CAM protein structures across Species</strong></p>
+                        <p>Cam1 is a good target to study because we see that its overall concentration goes up
+                            with different calcium concentrations. Cam1 is also a good target because it is high
+                            in the fixation strain 1516 but not in the non-fixation strain CCMP2090. We identify
+                            likely transcription factors that are causing this difference in 1516 and 2090.</p>
+                        <p>But really at the molecular level, what is going on? We think it has to not only do
+                            with how CAM1 is regulated but also with its structure. It is likely that strain
+                            2090 has a different CAM1 structure but we cannot test it since its protein sequence
+                            is not known so we try to do this experiment by using Arabidopsis as our negative
+                            control and Phaeodactylum tricornutum (another calcifying protist) as our positive
+                            control and show quantitatively that the RMSD (Root Mean Square Deviation) values
+                            are very similar for the two species which also carry out fixation. We want to
+                            emphasize that the protein sequence for the two species is not identical:<br><span
+                                class="monospace">MGDEQLTEEQIAEFKEAFSLFDKDGDGTITTKELGTVMRSLGQNPTEAELQDMINEVDADGNGTIDFPEFCTLMARKMKDTDSEEELKEAFRVFDKDGNGFISAAELRHIMTNLGEKLTDEEVDEMLREADIDGDGQINYEEFVKVMMAK
+                                # huxleyi</span><br><span
+                                class="monospace">MADQLTEEQIAEFKEAFSLFDKDGDGTITTKELGTVMRSLGQNPTEAELMDMIQEIDADGSGTIDFPEFLTMMARKMKDTDSEEEILEAFKVFDKDGNGFISAAELRHIMTNLGEKLTDEEVDEMIREADIDGDGQINYEEFVKMMMSK
+                                # Phaeodactylum</span></p>
+                        <figure><img src="https://static.igem.wiki/teams/5365/wiki-assets/model/foldblue-png.webp"
+                                alt="" style="width: 60%;">
+                            <figcaption><b>Figure 10.</b> Alignment of secondary structures of CAM1 in Human
+                                (blue) and E. huxleyi (red). Structures were predicted using AlphaFold3. Root
+                                mean square deviation = 10.011</figcaption>
+                        </figure><br>
+                        <figure><img src="https://static.igem.wiki/teams/5365/wiki-assets/model/foldred-png.webp" alt=""
+                                style="width: 60%;">
+                            <figcaption><b>Figure 11.</b> Alignment of secondary structures of CAM1 in
+                                Phaeodactylum tricornutum (blue) and E. huxleyi (red). Structures were predicted
+                                using AlphaFold3. Root mean square deviation = 0.897</figcaption>
+                        </figure>
+                        <h3 id="header3-subsection-2-3">Discussion and Conclusion</h3>
+                        <p>The box plot demonstrates a clear variation in the expression levels of the CAM1 gene
+                            across different calcium concentrations, implying that calcium availability may
+                            influence CAM1 transcription. Notably, the increased expression at 10 mM calcium
+                            compared to lower concentrations suggests a potential role for calcium in regulating
+                            the gene's activity, possibly as part of a broader calcium signaling pathway. The
+                            higher median expression at elevated calcium levels could indicate that CAM1 plays a
+                            role in processes that are upregulated in calcium-rich environments, such as
+                            calcification or calcium homeostasis. These findings may have broader implications
+                            for understanding how Emiliania huxleyi modulates gene expression in response to
+                            environmental calcium, which could be crucial for its calcification process and its
+                            ecological success as a coccolithophore. Further studies could explore whether CAM1
+                            is directly regulated by calcium or if its expression changes are a downstream
+                            effect of broader metabolic shifts.</p>
+                        <p>The box plot highlights a clear difference in CAM1 gene expression between the
+                            Emiliania huxleyi strains CCMP1516 and CCMP2090, with strain CCMP1516 exhibiting
+                            significantly higher expression levels. The elevated CAM1 expression in CCMP1516
+                            could imply that this strain has enhanced mechanisms related to carbon fixation or
+                            calcium-related metabolic processes, providing a possible explanation for its
+                            distinct physiological traits. In the upcoming analysis, we further study this.</p>
+                        <p>In contrast, the lower CAM1 expression in CCMP2090 may reflect differences in its
+                            metabolic pathways or ecological adaptations. These findings have important
+                            implications for understanding strain-specific differences in E. huxleyi,
+                            particularly in how these strains respond to environmental factors like carbon
+                            availability and may offer insights into their distinct roles in global carbon
+                            cycling and their ecological success in different habitats.</p>
+                        <p>The contrasting correlation patterns between the two strains may also point to
+                            broader transcriptional network integration. In CCMP1516, CAM1 and its associated
+                            TFs could be part of a highly co-regulated network, where multiple TFs work in
+                            concert to control a set of genes involved in related metabolic processes. In
+                            CCMP2090, this co-regulation might be less pronounced, with the transcription
+                            factors regulating different sets of genes or being involved in more diverse
+                            pathways.</p>
+                        <ul>
+                            <li><b>In CCMP1516:</b> The transcription factors may act synergistically to control
+                                CAM1, creating a tightly interconnected network that ensures coordinated gene
+                                expression. This could be crucial for maintaining efficient carbon fixation and
+                                calcification.</li>
+                            <li><b>In CCMP2090:</b>The regulatory network could be more modular or loosely
+                                integrated, with each transcription factor controlling distinct sets of genes.
+                                As a result, CAM1 is not as tightly co-regulated with the transcription factors,
+                                leading to weaker correlations.</li>
+                        </ul>
+                        <h3 id="header3-subsection-2-4">Methods</h3>
+                        <p>For gene ontology, we loaded the bp (biological processes) dataset on <a
+                                href="https://jokergoo.github.io/rGREAT_genesets/">https://jokergoo.github.io/rGREAT_genesets/</a>
+                            using R, and queried the CAM gene IDs in the dataset.</p><img
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/model/tab1-png.webp" alt=""
+                            style="width: 80%;">
+                        <p>Here we used SRA datasets with the accession code SRP182772 for the strain CCMP 371.
+                            Genome and the GTF for E. Huxleyi were obtained from Ensembl Protists.</p>
+                        <p>Tools used-</p><img src="https://static.igem.wiki/teams/5365/wiki-assets/model/tab2-png.webp"
+                            alt="" style="width: 60%;">
+                        <p>PCA plots are created by reducing the dimensions of the vst (Variance Stabilizing
+                            Transformation) counts generated by pydeseq2. Expression box plots were generated
+                            using normalized gene counts for CAM1 for every replicate of each sample.</p>
+                        <p>For relaisning the SRP255237 dataset, for the strain CCMP 1516 (calcifying) and
+                            DRP000971 for the strain CCMP 2090 (noncalcifying), we used genome and gtf of E.
+                            Huxleyi were obtained from Ensembl Protists.</p>
+                        <p>Tools used-</p><img src="https://static.igem.wiki/teams/5365/wiki-assets/model/tab3-png.webp"
+                            alt="" style="width: 60%;">
+                        <p>PCA plots are created by reducing the dimensions of the vst (Variance Stabilizing
+                            Transformation) counts generated by pydeseq2. Box plots were created by plotting the
+                            gene abundances of CAM1 across the different conditions for each strain (ccmp 1516
+                            and ccmp 2090).</p>
+                        <p>Using the gene ontology datasets for E. huxleyi <a
+                                href="https://jokergoo.github.io/rGREAT_genesets/">(https://jokergoo.github.io/rGREAT_genesets/)</a>,
+                            we first identified a list of transcription factors using the molecular function
+                            term <a href="https://www.ebi.ac.uk/QuickGO/term/GO:0003677">GO:0003677</a>. This
+                            resulted in a list of 737 transcription factors. For each of the transcription
+                            factors (tf), we calculated the correlation of normalized gene expression of the tf
+                            with CAM1’s expression separately in CCMB1516 and CCMP2090 samples. We identified a
+                            set of transcription factors that have a high correlation with CAM1 in CCMP1516 but
+                            a low correlation in the CCMP2090 sample</p>
+                        <p>Normalized gene expression of the TFs and CAM were generated by a similar pipeline of
+                            tools- </p>
+                        <p>We used the same NCBI accession codes for the two strains as in the previous
+                            analysis, SRP255237 for the strain CCMP 1516 (calcifying) and DRP000971 for the
+                            strain CCMP 2090 (noncalcifying).</p>
+                        <p>Genome and the GTF for E. Huxleyi were obtained from Ensembl Protists.</p><img
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/model/tab4-png.webp" alt=""
+                            style="width: 60%;">
+                        <p>Our tool leverages the power of public data to generate testable hypotheses with
+                            multiple lines of evidence. Overall, we lay down a framework for the wider synthetic
+                            biology community who are interested in characterizing the impact of in understudied
+                            species of how should their genes be studied but acknowledge the limitation that we
+                            could not test our hypotheses in a wet lab experiment.</p>
+                    </section>
+                    <section id="header4">
+                        <h2>References</h2>
+                        <hr><a
+                            href="https://www.sciencedirect.com/science/article/pii/092479639600019X/pdf?md5=011059ffad173d9e335948472642835a&amp;pid=1-s2.0-092479639600019X-main.pdf">https://www.sciencedirect.com/science/article/pii/092479639600019X/pdf?md5=011059ffad173d9e335948472642835a&amp;pid=1-s2.0-092479639600019X-main.pdf</a><br><a
+                            href="https://www.int-res.com/articles/meps/59/m059p001.pdf">https://www.int-res.com/articles/meps/59/m059p001.pdf</a><br><a
+                            href="https://www.tandfonline.com/doi/abs/10.1080/00364827.1994.10413561">https://www.tandfonline.com/doi/abs/10.1080/00364827.1994.10413561</a><br><a
+                            href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/91GB00305">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/91GB00305</a><br><a
+                            href="https://academic.oup.com/plankt/article-pdf/15/8/875/4241231/15-8-875.pdf">https://academic.oup.com/plankt/article-pdf/15/8/875/4241231/15-8-875.pdf</a>
+                    </section>
+                </div>
+            </div>
+    </div>
+    </main>
+    </div>
+    <footer class="pt-3 pb-3 footer  text-white">
+        <div class="container">
+            <div class="row mb-3 align-items-center">
+                <div class="col-lg-12 col-xs-12">
+                    <div class="logo-section text-center"><img width="15%"
+                            src="https://static.igem.wiki/teams/5365/igem-logo.png" class="img-fluid mb-3"
+                            alt="iGEM IIT-B Logo">
+                        <div class="sponsor-logos d-flex justify-content-between align-items-center"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/1.png" alt="Sponsor 1"
+                                class="sponsor-logo">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/2.png" alt="Sponsor 2"
+                                class="sponsor-logo">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/3.png" alt="Sponsor 3"
+                                class="sponsor-logo">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/4.png" alt="Sponsor 4"
+                                class="sponsor-logo">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/wrcb-new-wf-logo-2024.png"
+                                alt="Sponsor 5" class="sponsor-logo">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <hr>
+            <div class="row mt-3 justify-content-center align-items-center">
+                <div class="col-lg-4 col-md-6 col-xs-12 text-center">
+                    <h5 class="mt-0" style="color: black;">Social Media</h5>
+                    <ul class="list-inline m-0">
+                        <li class="list-inline-item" style="color: black;"><a href="https://www.instagram.com/igem_iitb"
+                                target="_blank" rel="noreferrer">Instagram</a></li>
+                        <li class="list-inline-item" style="color: black;"><a
+                                href="https://www.linkedin.com/company/igem-iit-bombay" target="_blank"
+                                rel="noreferrer">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 col-xs-12 text-center">
+                    <h5 class="mt-0" style="color: black;">Contact</h5>
+                    <p class="mb-1" style="color: black;">IIT Bombay,
+                        Powai,
+                        Mumbai,
+                        Maharashtra,
+                        400076</p>
+                    <p class="mb-0" style="color: black;">igem.iitb@gmail.com</p>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col text-center">
+                    <p class="mb-1" style="color: black;"><small>© 2024 - Content on this site is licensed under a <a
+                                class="subfoot" href="https://creativecommons.org/licenses/by/4.0/"
+                                rel="license">Creative Commons Attribution 4.0
+                                International license</a>.</small></p>
+                    <p class="mb-0" style="color: black;"><small>The repository used to create this website is available
+                            at<a
+                                href="https://gitlab.igem.org/2024/iit-bombay">gitlab.igem.org/2024/iit-bombay</a>.</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+
+</body>
+<script>
+    // Get all dropdown elements on the page
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    // Add click event listener to each dropdown
+    dropdowns.forEach(dropdown => {
+        const tabLink = dropdown.querySelector('.tab-link');
+        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+
+        // Toggle dropdown when clicking the tab link
+        tabLink.addEventListener('click', () => {
+            if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
+                dropdownMenu.style.display = 'block';
+            } else {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!dropdown.contains(event.target)) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+</html>

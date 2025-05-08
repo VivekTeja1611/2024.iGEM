@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Practices | IIT-Bombay - iGEM 2024</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        img {
+            height: 300px;
+            width: 300px;
+        }
+
+        .content-outer {
+            background: linear-gradient(white, #d6ccc2);
+            padding-bottom: 2%;
+        }
+
+        section {
+            box-shadow: 0 15px 25px rgb(0, 7, 0.3);
+            padding-left: 2%;
+            padding-right: 2%;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            width: 85%;
+            margin-left: 7%;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            border-radius: 20px;
+            transition: 0.5s;
+        }
+        section:hover{
+            transform: scale(1.1);
+            transition: 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+                <a class="tab-link pic" id="home-logo" href="/iit-bombay/">
+                    <!-- <img src="https://static.igem.wiki/teams/5365/wiki-assets/nav/calcicapture.svg"></a> -->
+                    <div class="container-fluid">
+                        <div class="menu-item">
+                            <a href="home.html" class="btn btn-outline-* custom-home-btn">Home</a>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-* dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" style="color:rgb(0, 0, 0);">
+                                Team
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Team.html">Team</a></li>
+                                <li><a class="dropdown-item" href="Attributes.html">Attributes</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-* dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" style="color: rgb(0, 0, 0);">
+                                Project
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Contributions.html">Contribution</a></li>
+                                <li><a class="dropdown-item" href="Description.html">Description</a></li>
+                                <li><a class="dropdown-item" href="Engineering.html">Engineering</a></li>
+                                <li><a class="dropdown-item" href="Notebook.html">Notebook</a></li>
+                                <li><a class="dropdown-item" href="Safety.html">Safety</a></li>
+                            </ul>
+                        </div>
+                        <div class="menu-item"><a href="human-practices.html"
+                                class="btn btn-outline-* custom-human-btn">Human practices</a>
+                        </div>
+                        <div class="menu-item"><a href="Education.html"
+                                class="btn btn-outline-* custom-human-btn">Education</a>
+                        </div>
+                        <div class="menu-item"><a href="Model.html" class="btn btn-outline-* custom-human-btn">Model</a>
+                        </div>
+                    </div>
+        </div>
+        </nav>
+    </div>
+    <div class="contain">
+        <main style="display: flex; margin-bottom: 1rem;">
+            <!-- <button class="menu-toggle">☰</button>
+            <div class="menu-container  ">
+                <div class="menu-sticky">
+                    <div class="list-group"><a href="#section-0"
+                            class="list-group-item list-group-item-action menu-item">INYAS Session</a>
+                        <div class="sub-items "></div><a href="#section-1"
+                            class="list-group-item list-group-item-action menu-item">AI Transformations in
+                            Healthcare</a>
+                        <div class="sub-items "></div><a href="#section-2"
+                            class="list-group-item list-group-item-action menu-item">SynBio 101</a>
+                        <div class="sub-items "></div><a href="#section-3"
+                            class="list-group-item list-group-item-action menu-item">Team Orientation</a>
+                        <div class="sub-items "></div><a href="#section-4"
+                            class="list-group-item list-group-item-action menu-item">Meet with IIT Jodhpur
+                            Professors</a>
+                        <div class="sub-items "></div><a href="#section-5"
+                            class="list-group-item list-group-item-action menu-item">Biogenesis Symposium</a>
+                        <div class="sub-items "></div><a href="#section-6"
+                            class="list-group-item list-group-item-action menu-item">Rural Outreach with CTARA</a>
+                        <div class="sub-items "></div><a href="#section-7"
+                            class="list-group-item list-group-item-action menu-item">Collaboration with NSS</a>
+                        <div class="sub-items "></div><a href="#section-8"
+                            class="list-group-item list-group-item-action menu-item">Cracking Carbon Capture -
+                            Talk</a>
+                        <div class="sub-items "></div><a href="#section-9"
+                            class="list-group-item list-group-item-action menu-item">ITC WiSE Session</a>
+                        <div class="sub-items "></div><a href="#section-10"
+                            class="list-group-item list-group-item-action menu-item">Biology Crypt Hunt - Arcano</a>
+                        <div class="sub-items "></div>
+                    </div> -->
+    </div>
+    </div>
+    <div class="content-outer">
+        <h1 style="text-align: center;margin-top: 2%;">Education</h1>
+        <div class="content-container">
+            <div class="content-container">
+                <section data-menu-ignore="true">
+                    <h2>Introduction to Educational Outreach</h2>
+                    <hr>
+                    <p>One of the key insights which we have gained over the course of our project is that
+                        there is a general lack of awareness among the general public in India regarding the
+                        issues of climate change and carbon capture. This notion was seconded in our meet
+                        with a known climate activist who said that the single biggest roadblock for climate
+                        change is the lack of knowledge and ignorance of the general public towards these
+                        issues. Hence, we decided to make sure that we reach out to as many people as
+                        possible through our various educational outreach programmes to show them the
+                        effects of climate change while also showing how they can help and pursue the
+                        various career prospects in Biotechnology.</p>
+                </section>
+                <section id="section-0">
+                    <h2>INYAS Session</h2>
+                    <div class="row justify-content-center float-left" style="margin-top: 2%;margin-bottom: 2%;"><img
+                            class="col-5"
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/education/image24-jpg.webp" alt=""><img
+                            class="col-5"
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/education/image8-jpg.webp" alt="">
+                    </div>
+                    <p><strong>About:</strong> We conducted the INYAS (Indian Young Academy of Sciences)
+                        session hosted by professor Arnab Dutta on 7th of June, 2024 in IITB Campus and this
+                        was based on CCUS and BECCS</p>
+                    <p>We kicked off the session by introducing iGEM, explaining its role in fostering
+                        synthetic biology innovations across the globe. This set the stage for a deeper dive
+                        into the field of synthetic biology, where we explored its goals, applications, and
+                        how it serves as a useful tool in solving real-world problems. Our focus then
+                        shifted to the climate crisis, where we laid out the gravity of the situation,
+                        delving into the causes and factors contributing to this global challenge. We
+                        emphasized topics such as the carbon footprint, providing concrete examples to help
+                        the audience grasp the extent of environmental degradation. Following this, we
+                        introduced carbon capture as a potential solution to the climate crisis, detailing
+                        the various methods used, particularly Carbon Capture, Utilization, and Storage
+                        (CCUS) and Bioenergy with Carbon Capture and Storage (BECCS). We critically
+                        discussed the advantages and limitations of existing solutions, ultimately leading
+                        into a presentation of our own innovative approach to carbon capture through
+                        synthetic biology. The session concluded with a lively Q&amp;A segment, where
+                        students posed insightful questions that our team eagerly addressed. We also made
+                        sure to tell the students about career prospects in the field of Biotech.</p>
+                    <p><strong>Impact:</strong> By presenting the complexities of the climate crisis in a
+                        clear and relatable manner, we were able to broaden students' understanding of
+                        environmental issues and the potential of scientific solutions like CCUS and BECCS.
+                        This interaction not only increased awareness about the climate crisis but also
+                        fostered an interest in research and innovation among the attendees</p>
+                    <p>Also attached are the presentation slides: <a target="_blank"
+                            href="https://static.igem.wiki/teams/5365/content/presentation-for-inyas.pdf">Link
+                            to slides</a> </p>
+                </section>
+                <section id="section-1">
+                    <h2>AI Transformations in Healthcare</h2>
+                    <div class="row justify-content-center float-right"><img class="col-5"
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/education/image15-png.webp" alt=""
+                            style="width:40%">
+                        <img class="col-5"
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/education/image11-png.webp" alt=""
+                            style="width:40%">
+                    </div>
+                    <p>In a college with technology in its name, it is natural for there to be an abundance
+                        of young tech, AI and ML enthusiasts. The application of this in diagnostics and
+                        healthcare is reaching new heights in this generation. To let B.Tech students take a
+                        peek at what this intersection has in store for them, we organized this AI
+                        Transformations in healthcare session in collaboration with the BioX Club. The
+                        various speakers talking about their experiences and expertise in this served as
+                        motivation for students to try applying their skills in biology through the BSBE and
+                        KCDH departments of IIT Bombay, something which most students don’t get a chance to
+                        explore. We wanted to use this session as a platform to make students more aware of
+                        the field of Biology and its intersection with skills which are used regularly in
+                        maths, physics and engineering disciplines.</p>
+                </section>
+                <section id="section-2">
+                    <h2>SynBio 101</h2>
+                    <div class="float-left"><img
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/education/image6-jpg.webp" alt="">
+                    </div>
+                    <p><strong>About:</strong> We designed and conducted the SynBio101 course, which ran
+                        from June 27, 2024, for four weeks. This course was designed to introduce
+                        participants to the exciting and rapidly growing field of synthetic biology, a field
+                        that allows for the redesigning of organisms for useful purposes by programming them
+                        to perform new tasks.</p>
+                    <p>The course aimed to provide participants with a strong foundation in engineering
+                        biological systems, while emphasizing how these innovations can be used to tackle
+                        global challenges like climate change, food security, and human health.</p>
+                    <p>The curriculum was structured to cover key topics over four weeks: <br>Week 1:
+                        Introduction to Synthetic Biology <br> Week 2: Fundamentals of Molecular Biology
+                        <br> Week 3: Genetic Engineering &amp; Biotechnology <br> Week 4: Conclusion and
+                        Final Project
+                    </p>
+                    <p>Participants dedicated 4-5 hours per week to engaging in course content, which
+                        included lectures, readings, and hands-on projects. Weekly quizzes, a mid-course
+                        assignment, and a final project were used to evaluate their understanding and ensure
+                        active participation throughout the course. Upon successful completion, participants
+                        earned a certificate.</p>
+                    <p><strong>Impact:</strong> IIT Bombay does not have a UG program for Biotechnology.
+                        Thus, this course was an effective way of introducing students to synthetic biology
+                        and iGEM. This also opened their eyes to the power of biotechnology in addressing
+                        complex problems, from environmental sustainability to healthcare advancements.
+                        Students not only gained a deeper understanding of genetic engineering and
+                        biotechnology but also developed critical thinking skills as they explored potential
+                        applications for synthetic biology. The course helped foster a sense of innovation
+                        and problem-solving among participants. The course was an effective way to bridge
+                        the gap between advanced scientific concepts and young learners, enabling them to
+                        take an active role in their biology-based interests.</p>
+                </section>
+                <section id="section-3">
+                    <h2>Team Orientation</h2>
+                    <div class="row justify-content-center float-right"><img class="col-4"
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/education/image30-jpg.webp" alt="">
+                        <img class="col-4"
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/education/collage-oreo-png.webp"
+                            alt="">
+                    </div>
+                    <p>We took an orientation session for the freshers of IIT Bombay. This session was an
+                        introduction for freshers to the iGEM Team of IIT Bombay. Our team members
+                        introduced them to the various aspects of iGEM as a competition and the work we had
+                        done so far. This helped us to expose a lot of students to the world of Synthetic
+                        Biology and inspired them to pursue their latent interest in the subject. We also
+                        had demonstrations of gel electrophoresis, microscopes, GFP E.coli along with a
+                        poster presentation about CalciCapture for them and one on one interactions with
+                        them to address their queries and make them aware of the exposure they’ll get
+                        through the iGEM competition.</p>
+                </section>
+                <section id="section-4">
+                    <h2>Meet with IIT Jodhpur Professors</h2>x
+                    <div class="float-left"><img
+                            src="https://static.igem.wiki/teams/5365/wiki-assets/education/image12-jpg.webp" alt="">
+                    </div>
+                    <p><strong>About:</strong> As part of our educational outreach, we had the opportunity
+                        to interact with professors from IIT Jodhpur who were keen to understand the tech
+                        culture at IIT Bombay. During the discussion, we highlighted how the collaborative
+                        environment and robust ecosystem at IITB have been instrumental in fostering
+                        innovation and interdisciplinary projects, such as our iGEM team. We shared our
+                        journey of forming a new iGEM team at IIT Bombay and how the various resources on
+                        campus, including access to labs, guidance from faculty, and mentorship from
+                        seniors, were pivotal in helping us embark on this ambitious journey.</p>
+                    <p>Our team’s focus on developing a CCUS technology using marine algae reflects how IIT
+                        Bombay’s ecosystem encourages students to tackle global challenges. The support we
+                        received, from ideation to execution, underlined the university’s commitment to
+                        fostering innovation in synthetic biology, particularly through initiatives like
+                        iGEM. The professors from IIT Jodhpur were particularly interested in how this model
+                        of interdisciplinary collaboration can be replicated at their own institute.</p>
+                    <p><strong>Impact: </strong>By sharing our experience with the IIT Jodhpur professors,
+                        we hope to inspire more institutions to adopt a culture that encourages
+                        participation in global competitions like iGEM. This interaction also opened up
+                        possibilities for future collaborations, allowing us to expand the impact of our
+                        educational outreach initiatives.</p>
+                </section>
+                <section id="section-5">
+                    <h2>Biogenesis Symposium</h2>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <img src="https://static.igem.wiki/teams/5365/wiki-assets/education/image7-jpg.webp"
+                                    alt="" class="img-fluid mb-2" style="width:100%">
+                                <p>
+                                    <strong>About:</strong>
+                                    Biogenesis was a virtual biotech symposium conducted by the joint collaborative
+                                    efforts of the iGEM teams of IIT Bombay, IISER Kolkata and IISER TVM. Three esteemed
+                                    speakers with vast experience in the field of Biotech were invited to speak.
+                                </p>
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+                                <img src="https://static.igem.wiki/teams/5365/wiki-assets/education/image17-jpg.webp"
+                                    alt="" class="img-fluid mb-2" style="width:100%">
+                                <p>
+                                    Professor Pramod Wangikar, a faculty member at IIT Bombay and Co-founder of Clarity
+                                    Bio Systems,
+                                    gave insights from his experiences in working in the start-up and the tools he had
+                                    developed in
+                                    the process.
+                                </p>
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+                                <img src="https://static.igem.wiki/teams/5365/wiki-assets/education/image27-jpg.webp"
+                                    alt="" class="img-fluid mb-2" style="width:100%">
+                                <p>
+                                    Mr Dilith Rajan, a microbiologist and the Co-founder of Concentri, talked about iGEM
+                                    as a global
+                                    platform for innovation, and the process of launching his own company.
+                                </p>
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+                                <img src="https://static.igem.wiki/teams/5365/wiki-assets/education/image19-jpg.webp"
+                                    alt="" class="img-fluid mb-2" style="width:100%">
+                                <p>
+                                    Dr. Jaydeep Bhattacharya, a professor in JNU and Founder of Bio-Innovatiq, shared
+                                    his insights
+                                    about the work done by him in biotech and highlighted the vast scope present in the
+                                    field.
+                                </p>
+                            </div>
+                        </div>
+
+                        <p>
+                            <strong>Impact: </strong>These speaker sessions were a great opportunity for young
+                            learners to know about how they can start their careers in biotech and learning
+                            about how the industry works. It was also inspiring to see how iGEM teams from
+                            different locations collaborated for a common cause to further the growth of
+                            biotech.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="section-6">
+                    <h2>Rural Outreach with CTARA</h2>
+                    <div class="row justify-content-center">
+                        <div class="col-4 float-right" style="height: 250px;"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/education/image35-png.webp" alt="">
+                        </div>
+                        <div class="col-4 float-right" style="height: 250px;"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/education/image39-png.webp" alt="">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <p>Our group of stakeholders for this problem was quite diverse, since climate crisis
+                        affects each and every person regardless of their socio-economic and geographic
+                        backgrounds.<br> The Centre for Technology Alternatives for Rural Areas (CTARA) is a
+                        body in our institute that focuses on helping technology and innovation reach rural
+                        communities and spread awareness about various scientific domains within the
+                        country. Hence we approached Prof. Anand B. Rao to understand the context of climate
+                        change within the urban and rural areas.</p>
+                    <p>We wanted to know how we could conduct effective educational outreach sessions in the
+                        rural regions of India. The main issue that we identified was the language barrier.
+                        Since India is a multilingual country, communication in English is a tough challenge
+                        for many locals, especially in villages. Using their local languages, we will be
+                        able to effectively convey our scientific learnings and start fruitful discussions.
+                        Thus we decided to translate our outreach resources into local languages and make
+                        use of the diversity within our own team to help us increase the reach of our
+                        project. </p>
+                </section>
+                <section id="section-7">
+                    <h2>Collaboration with NSS</h2>
+                    <p>NSS is a government sponsored public service program present in our college. <br>We
+                        collaborated with NSS and two NGOs named Vidya and Asha to conduct outreach sessions
+                        in schools in rural areas. These sessions introduced the concept of climate crisis
+                        and carbon capture to the students from these schools. The session was conducted by
+                        our team to children from classes 1st to 8th.</p>
+                    <div id="nss-collab"
+                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.2em; width: 60%; margin-inline: auto; margin-block: 2rem;">
+                        <div style="width: 100%;"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/education/41-jpg.webp" alt=""
+                                style="max-width: 100%; max-height: 100%;"></div>
+                        <div style="width: 100%;"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/education/42-jpg.webp" alt=""
+                                style="max-width: 100%; max-height: 100%;"></div>
+                        <div style="width: 100%;"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/education/44-jpg.webp" alt=""
+                                style="max-width: 100%; max-height: 100%;"></div>
+                        <div style="width: 100%;"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/education/43-jpg.webp" alt=""
+                                style="max-width: 100%; max-height: 100%;"></div>
+                    </div>
+                    <p>We distributed activity booklets to these students. These activity booklets had fun
+                        exercises and puzzles which were related to our topic of climate change. This was an
+                        innovative activity which engaged these students in our session. We have also made
+                        an online version of this booklet available in multiple languages. This booklet will
+                        be a helpful for future iGEM Teams and would be resourceful for them in conducting
+                        significant educational activities.</p>
+                </section>
+                <section id="section-8">
+                    <h2>Cracking Carbon Capture - Talk</h2>
+                    <br>
+                    <div class="row justify-content-center">
+                        <div class="col-4 float-right" style="height: 300px;"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/education/image3-jpg.webp" alt="">
+                        </div>
+                        <div class="col-4 float-right" style="height: 300px;"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/education/image32-jpg.webp" alt="">
+                        </div>
+                    </div>
+                    <br>
+                    <p>The team organized an interactive session on carbon capture technologies by inviting
+                        Prof. Arnab Dutta from the Department of Chemistry who works on bio-inspired
+                        catalyst design to capture CO2. In the session, he gave an overview of the climate
+                        crisis and why it affects each and every person on the planet. He talked about the
+                        various existing CCUS technologies and how they work and what their limitations are.
+                        To make the session engaging we also had a live demonstration of a CO2 capture
+                        experiment where alkaline water was used in which air was purged to dissolve the
+                        CO2. Then calcium carbonate was made by adding calcium ions to it. Students were
+                        also given a chance to work on the setup. This was followed by a QnA session to
+                        solve any doubts held by the students. The session helped the audience understand
+                        the current research being done and what challenges still remain in this field.</p>
+                </section>
+                <section id="section-9">
+                    <h2>ITC WiSE Session</h2>
+                    <br>
+                    <div class="row justify-content-center">
+                        <div class="col-4 float-left" style="height: 300px;"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/education/image4-jpg.webp" alt="">
+                        </div>
+                        <div class="col-4 float-left" style="height: 300px;"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/education/image31-png.webp" alt="">
+                        </div>
+                    </div>
+                    <br>
+                    <p>WiSE stands for Women in Science and Engineering. <br>Most STEM fields tend to be
+                        male-dominated. A prime example is our own college with a female to male gender
+                        ratio of 1:4 and it is necessary for us to make sure that women also feel
+                        comfortable in joining such fields. This was done through this session as it showed
+                        how there are endless opportunities. One of our team members, Kadambari Bhide held
+                        the session. Our aim was to motivate junior undergraduate females to join and
+                        explore more such opportunities in STEM. Examples of pioneering women in biotech
+                        were given for inspiring people while Kadambari shared her own insightful
+                        experiences to motivate the students. We also gave small fun demonstrations to
+                        create interest among the audience. In general, this also helped us create awareness
+                        among juniors.</p>
+                </section>
+                <section id="section-10">
+                    <h2>Biology Crypt Hunt - Arcano</h2>
+                    <br>
+
+                    <div class="row justify-content-center" >
+                        <div class="col-4" c><img src="https://static.igem.wiki/teams/5365/wiki-assets/education/image28-png.webp"
+                                alt="">
+                        </div> <div class="col-4"><img src="https://static.igem.wiki/teams/5365/wiki-assets/education/image30-png.webp"
+                            alt=""></div>
+                    </div>
+                    <br>
+                    <p>We conducted a biology-based crypt hunt event for undergraduate and postgraduate
+                        students at IITB, to foster curiosity and enthusiasm about biology as a domain and
+                        how it can be integrated with technology to solve pressing current issues.</p>
+                    <p>The questions consisted of a mix of wordplay and deciphering of images with their
+                        captions. We integrated questions related to the institute as well to keep it
+                        relatable. Overall the questions made were very thought-provoking and all the
+                        participants enjoyed themselves to the fullest, even asking us when something like
+                        this would be held again.</p>
+                    <p>This was a great experience for everyone and an innovative and exciting way to
+                        generate interest among students in biology based topics.</p>
+                </section>
+            </div>
+        </div>
+    </div>
+    </main>
+    </div>
+    <footer class="pt-3 pb-3 footer  text-white">
+        <div class="container">
+            <div class="row mb-3 align-items-center">
+                <div class="col-lg-12 col-xs-12">
+                    <div class="logo-section text-center"><img width="15%"
+                            src="https://static.igem.wiki/teams/5365/igem-logo.png" class="img-fluid mb-3"
+                            alt="iGEM IIT-B Logo">
+                        <div class="sponsor-logos d-flex justify-content-between align-items-center"><img
+                                src="https://static.igem.wiki/teams/5365/wiki-assets/1.png" alt="Sponsor 1"
+                                class="sponsor-logo">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/2.png" alt="Sponsor 2"
+                                class="sponsor-logo">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/3.png" alt="Sponsor 3"
+                                class="sponsor-logo">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/4.png" alt="Sponsor 4"
+                                class="sponsor-logo">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/wrcb-new-wf-logo-2024.png"
+                                alt="Sponsor 5" class="sponsor-logo">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <hr>
+            <div class="row mt-3 justify-content-center align-items-center">
+                <div class="col-lg-4 col-md-6 col-xs-12 text-center">
+                    <h5 class="mt-0" style="color: black;">Social Media</h5>
+                    <ul class="list-inline m-0">
+                        <li class="list-inline-item" style="color: black;"><a href="https://www.instagram.com/igem_iitb"
+                                target="_blank" rel="noreferrer">Instagram</a></li>
+                        <li class="list-inline-item" style="color: black;"><a
+                                href="https://www.linkedin.com/company/igem-iit-bombay" target="_blank"
+                                rel="noreferrer">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 col-xs-12 text-center">
+                    <h5 class="mt-0" style="color: black;">Contact</h5>
+                    <p class="mb-1" style="color: black;">IIT Bombay,
+                        Powai,
+                        Mumbai,
+                        Maharashtra,
+                        400076</p>
+                    <p class="mb-0" style="color: black;">igem.iitb@gmail.com</p>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col text-center">
+                    <p class="mb-1" style="color: black;"><small>© 2024 - Content on this site is licensed under a <a
+                                class="subfoot" href="https://creativecommons.org/licenses/by/4.0/"
+                                rel="license">Creative Commons Attribution 4.0
+                                International license</a>.</small></p>
+                    <p class="mb-0" style="color: black;"><small>The repository used to create this website is available
+                            at<a
+                                href="https://gitlab.igem.org/2024/iit-bombay">gitlab.igem.org/2024/iit-bombay</a>.</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+
+</body>
+<script>
+    // Get all dropdown elements on the page
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    // Add click event listener to each dropdown
+    dropdowns.forEach(dropdown => {
+        const tabLink = dropdown.querySelector('.tab-link');
+        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+
+        // Toggle dropdown when clicking the tab link
+        tabLink.addEventListener('click', () => {
+            if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
+                dropdownMenu.style.display = 'block';
+            } else {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!dropdown.contains(event.target)) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team | IIT-Bombay - iGEM 2024</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-bg: #f8f9fa;
+            --dark-bg: #343a40;
+            --text-dark: #212529;
+            --text-light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+        }
+
+        .navbar {
+            background-color: white !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .btn {
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar .btn:hover {
+            background-color: var(--primary-color);
+            color: white !important;
+        }
+
+        .dropdown-menu {
+            border-radius: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .team-banner {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .team-banner h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .team-banner p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .team-section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            color: var(--secondary-color);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .team-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-card-img {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .team-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .team-card:hover .team-card-img img {
+            transform: scale(1.05);
+        }
+
+        .team-card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .team-card-body h3 {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .team-card-body p {
+            color: #6c757d;
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: var(--light-bg);
+            color: var(--secondary-color);
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .footer {
+            background-color: var(--secondary-color);
+            color: var(--text-light) !important;
+            padding: 40px 0 20px;
+        }
+
+        .footer h5,
+        .footer p,
+        .footer a,
+        .footer small {
+            color: var(--text-light) !important;
+        }
+
+        .footer a {
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--primary-color) !important;
+        }
+
+        .sponsor-logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .sponsor-logo {
+            max-height: 50px;
+            margin: 10px;
+        }
+
+        .list-inline-item:not(:last-child) {
+            margin-right: 1rem;
+        }
+
+        @media (max-width: 767.98px) {
+            .team-banner {
+                padding: 50px 0;
+            }
+
+            .team-banner h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .team-card-img {
+                height: 200px;
+            }
+
+            .sponsor-logos {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <img src="https://static.igem.wiki/teams/5365/wiki-assets/nav/calcicapture.svg" alt="IIT-Bombay iGEM"
+                    height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="btn btn-outline-primary" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Team
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Team.html">Team</a></li>
+                            <li><a class="dropdown-item" href="Attributes.html">Attributes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Project
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Contributions.html">Contribution</a></li>
+                            <li><a class="dropdown-item" href="Description.html">Description</a></li>
+                            <li><a class="dropdown-item" href="Engineering.html">Engineering</a></li>
+                            <li><a class="dropdown-item" href="Notebook.html">Notebook</a></li>
+                            <li><a class="dropdown-item" href="Safety.html">Safety</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-primary" href="human-practices.html">Human Practices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-primary" href="Education.html">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-primary" href="Model.html">Model</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="team-banner">
+        <div class="container">
+            <h1>Meet Our Team</h1>
+            <p>The brilliant minds behind IIT-Bombay's 2024 iGEM project - dedicated researchers, innovators, and
+                problem-solvers working together to make a difference through synthetic biology.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Principal Investigators -->
+        <section class="team-section">
+            <h2 class="section-title">Principal Investigators</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/kirankondabagil-png.webp"
+                                alt="Prof. Kiran Kondabagil">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Prof. Kiran Kondabagil</h3>
+                            <p>Principal Investigator</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/arnab-dutta-jpg.webp"
+                                alt="Prof. Arnab Dutta">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Prof. Arnab Dutta</h3>
+                            <p>Principal Investigator</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/saket-chaudhary-jpg.webp"
+                                alt="Prof. Saket Chaudhary">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Prof. Saket Chaudhary</h3>
+                            <p>Principal Investigator</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instructor -->
+        <section class="team-section">
+            <h2 class="section-title">Instructor</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/shivamv2-jpg.webp"
+                                alt="Shivam Kashyap">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Shivam Kashyap</h3>
+                            <p>Instructor</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advisors -->
+        <section class="team-section">
+            <h2 class="section-title">Advisors</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/ajay-jpg.webp"
+                                alt="Ajay Mishra">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Ajay Mishra</h3>
+                            <p>Advisor</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/kirtiv1-jpg.webp"
+                                alt="Kirti">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Kirti</h3>
+                            <p>Advisor</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Leaders -->
+        <section class="team-section">
+            <h2 class="section-title">Student Leaders</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/husayn-bootwala-jpeg.webp"
+                                alt="Husayn Bootwala">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Husayn Bootwala</h3>
+                            <p>Student Leader</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/abdulv1-jpg.webp"
+                                alt="Abdul Qaim Ansar">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Abdul Qaim Ansar</h3>
+                            <p>Student Leader</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wet Lab -->
+        <section class="team-section">
+            <h2 class="section-title">Wet Lab Team</h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/kadambari-jpg.webp"
+                                alt="Kadambari Umesh Bhide">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Kadambari Umesh Bhide</h3>
+                            <p>Wet Lab</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/aditya-shrungarpure-jpg.webp"
+                                alt="Aditya Vishwas Shrungarpure">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Aditya Vishwas Shrungarpure</h3>
+                            <p>Wet Lab</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/ramandeep-singh-jpg.webp"
+                                alt="Ramandeep Singh">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Ramandeep Singh</h3>
+                            <p>Wet Lab</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/aakash-guptav1-jpeg.webp"
+                                alt="Aakash Gupta">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Aakash Gupta</h3>
+                            <p>Wet Lab</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/deepan-jpg.webp"
+                                alt="N Deepan Balaji">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>N Deepan Balaji</h3>
+                            <p>Wet Lab</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/anuj-waje-png.webp"
+                                alt="Anuj Anna Waje">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Anuj Anna Waje</h3>
+                            <p>Wet Lab</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/hitesh-meenav1-jpg.webp"
+                                alt="Hiteesh Meena">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Hiteesh Meena</h3>
+                            <p>Wet Lab</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dry Lab -->
+        <section class="team-section">
+            <h2 class="section-title">Dry Lab Team</h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/ashish-jpeg.webp"
+                                alt="Zantye Ashish Avinash">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Zantye Ashish Avinash</h3>
+                            <p>Dry Lab</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/yashv1-jpg.webp"
+                                alt="Yash Santosh Jonjale">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Yash Santosh Jonjale</h3>
+                            <p>Dry Lab</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/navyav1-jpeg.webp"
+                                alt="Navya Navya">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Navya Navya</h3>
+                            <p>Dry Lab</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/sabarish-v2-jpg.webp"
+                                alt="Sabarish">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Sabarish</h3>
+                            <p>Dry Lab</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/pranjal-jpeg.webp"
+                                alt="Pranjal">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Pranjal</h3>
+                            <p>Dry Lab</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Human Practices -->
+        <section class="team-section">
+            <h2 class="section-title">Human Practices Team</h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/prashast-jpg.webp"
+                                alt="Prashast Chitravanshi">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Prashast Chitravanshi</h3>
+                            <p>Human Practices</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/ishitav5-jpg.webp"
+                                alt="Ishita Gurjar">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Ishita Gurjar</h3>
+                            <p>Human Practices</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/mayav5-jpg.webp"
+                                alt="Maya Maya">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Maya Maya</h3>
+                            <p>Human Practices</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/arushiv3-jpg.webp"
+                                alt="Arushi Srivastav">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Arushi Srivastav</h3>
+                            <p>Human Practices</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/dawar-png.webp"
+                                alt="Dawar Jyoti Deka">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Dawar Jyoti Deka</h3>
+                            <p>Human Practices</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DevOps -->
+        <section class="team-section">
+            <h2 class="section-title">DevOps Team</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/shahab-jpeg.webp"
+                                alt="Shahab Ahmad">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Shahab Ahmad</h3>
+                            <p>DevOps</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/pranav-jpg.webp"
+                                alt="Pranav Prakash">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Pranav Prakash</h3>
+                            <p>DevOps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media and Design -->
+        <section class="team-section">
+            <h2 class="section-title">Media and Design Team</h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/diksha-png.webp"
+                                alt="Diksha Tembhurne">
+                        </div>
+                        <div class="team-card-body">
+                            <h3>Diksha Tembhurne</h3>
+                            <p>Media and Design</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-card-img">
+                            <img src="https://static.igem.wiki/teams/5365/wiki-assets/team/arnavv2-jpg.webp"
+                                alt="Arnav Ramteke">
+                        </div>
+                        <div class="team
