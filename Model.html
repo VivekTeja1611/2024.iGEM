@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg" type="image/x-icon">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education | IIT-Bombay - iGEM 2024</title>
+    <title>Education | iGEM Assignment</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
@@ -22,11 +22,12 @@
             background-color: white;
             width: 80%;
             border-radius: 20px;
-            padding-top:20px;
+            padding-top: 20px;
             padding-left: 20px;
-            margin-left:150px;
+            margin-left: 150px;
         }
-        #big-img:hover{
+
+        #big-img:hover {
             transform: scale(1.1);
             transition: 1s;
         }
@@ -38,10 +39,10 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
 
             <a class="tab-link pic" id="home-logo" href="/iit-bombay/">
-                <!-- <img src="https://static.igem.wiki/teams/5365/wiki-assets/nav/calcicapture.svg"></a> -->
+
                 <div class="container-fluid">
                     <div class="menu-item">
-                        <a href="home.html" class="btn btn-outline-* custom-home-btn">Home</a>
+                        <a href="index.html" class="btn btn-outline-* custom-home-btn">Home</a>
                     </div>
                     <div class="dropdown">
                         <button class="btn btn-outline-* dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -53,7 +54,7 @@
                             <li><a class="dropdown-item" href="Attributes.html">Attributes</a></li>
                         </ul>
                     </div>
-                    
+
                     <div class="menu-item"><a href="human-practices.html"
                             class="btn btn-outline-* custom-human-btn">Human practices</a>
                     </div>
@@ -163,7 +164,7 @@
                         <h3 id="header1-subsection-0-1">Growth Results</h3>
                         <p>These are the growth curves for various organisms we modeled. </p>
                         <figure><img src="https://static.igem.wiki/teams/5365/wiki-assets/model/growcurve-png.webp"
-                                alt=""style="transform:scale(0.8);margin-left:10%;"></figure>
+                                alt="" style="transform:scale(0.8);margin-left:10%;"></figure>
                         <p>First we were curious to know what is stopping Emilania huxleyi from growing in the
                             environment. Is it the competition or nutrient concentration or both ? Competition
                             with other organisms for nutrients was obviously there. But since our final solution
@@ -174,11 +175,11 @@
                             the season from ( 7 mmol/m3 to 10 mmol/m3 ). Notice that the Emilania Huxleyi has
                             shown much significant increment in growth as compared to other organisms.</p>
                         <figure><img src="https://static.igem.wiki/teams/5365/wiki-assets/model/growcurve2-png.webp"
-                                alt=""style="transform:scale(0.8);margin-left:10%;"></figure><br>
+                                alt="" style="transform:scale(0.8);margin-left:10%;"></figure><br>
                         <p>We also did the same experiment with phosphate by changing the initial concentration
                             by the same factors. Have a look at the results</p>
                         <figure><img src="https://static.igem.wiki/teams/5365/wiki-assets/model/growcurve3-png.webp"
-                                alt=""style="transform:scale(0.8);margin-left:10%;"></figure>
+                                alt="" style="transform:scale(0.8);margin-left:10%;"></figure>
                         <p>Emilania Huxleyi has shown reduction while some others have shown improvement. The
                             reason is that Emilania Huxleyi as compared to other organisms is capable of using
                             organic phosphate when inorganic phosphate is limiting. In such situations, other
@@ -883,34 +884,7 @@
         </div>
     </footer>
     </div>
-
-
 </body>
-<script>
-    // Get all dropdown elements on the page
-    const dropdowns = document.querySelectorAll('.dropdown');
 
-    // Add click event listener to each dropdown
-    dropdowns.forEach(dropdown => {
-        const tabLink = dropdown.querySelector('.tab-link');
-        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-
-        // Toggle dropdown when clicking the tab link
-        tabLink.addEventListener('click', () => {
-            if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
-                dropdownMenu.style.display = 'block';
-            } else {
-                dropdownMenu.style.display = 'none';
-            }
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (event) => {
-            if (!dropdown.contains(event.target)) {
-                dropdownMenu.style.display = 'none';
-            }
-        });
-    });
-</script>
 
 </html>
